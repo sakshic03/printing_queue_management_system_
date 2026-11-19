@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | WaitLess Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-navbar">
+        <a href="/" class="logo">
+            <span class="logo-icon">W</span>
+            WaitLess<span class="logo-green">Print.</span>
+        </a>
+        <a href="/" class="back-home">← Back to home</a>
+    </div>
+
+    <main class="auth-layout">
+
+        <section class="auth-visual">
+            <div class="auth-visual-content">
+                <span class="auth-eyebrow">GET STARTED WITH US</span>
+
+                <h1>Make room<br>for <span>more.</span></h1>
+
+                <p>
+                    Spend less time waiting and more time doing
+                    what matters. Your smarter printing experience
+                    starts with one simple step.
+                </p>
+
+                <div class="auth-mini-dashboard">
+                    <div class="auth-mini-icon">✦</div>
+                    <div>
+                        <strong>One account. Easier printing.</strong>
+                        <span>Upload • Track • Collect</span>
+                    </div>
+                </div>
+            </div>
+
+            <span class="auth-decoration">W.</span>
+        </section>
+
+
+        <section class="auth-form-section">
+
+            <div class="auth-form-card">
+
+                <div class="auth-form-heading">
+                    <span class="section-tag">CREATE YOUR ACCOUNT</span>
+                    <h2>Let's get started.</h2>
+                    <p>Enter your details to join WaitLess Print.</p>
+                </div>
+
+
+                <form id="registerForm">
+
+                    <div class="form-group">
+                        <label for="name">Full name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Mobile number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter 10-digit mobile number"
+                            pattern="[0-9]{10}"
+                            maxlength="10"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Create password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="registerPassword"
+                                name="password"
+                                placeholder="Minimum 8 characters"
+                                minlength="8"
+                                required
+                            >
+
+                            <button type="button" id="toggleRegisterPassword">
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm password</label>
+
+                        <div class="password-wrapper">
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                name="confirm_password"
+                                placeholder="Re-enter your password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button type="button" id="toggleConfirmPassword">
+                                Show
+                            </button>
+                        </div>
+                    </div>
+
+                    <label class="remember-option">
+                        <input type="checkbox" required>
+                        <span>I agree to the terms and conditions.</span>
+                    </label>
+
+                    <button type="submit" class="auth-submit">
+                        Create Account <span>↗</span>
+                    </button>
+
+                    <p id="registerMessage" class="form-message"></p>
+
+                </form>
+
+                <div class="auth-divider">
+                    <span>ALREADY A MEMBER?</span>
+                </div>
+
+                <p class="auth-register">
+                    Already have an account?
+                    <a href="/login">Log in</a>
+                </p>
+
+            </div>
+
+            <p class="auth-bottom-note">
+                © 2026 WaitLess Print. All rights reserved.
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

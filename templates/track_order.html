@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order | WaitLess Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="print-options-page">
+
+<header class="shops-navbar">
+    <a href="/" class="logo">
+        <span class="logo-icon">W</span>
+        WaitLess<span class="logo-green">Print.</span>
+    </a>
+    <a href="/" class="back-home">← Home</a>
+</header>
+
+<main class="options-container">
+    <div class="upload-heading">
+        <span class="section-tag">ORDER TRACKING</span>
+        <h1>Track your <span>print.</span></h1>
+        <p>Enter your token number to check your order status.</p>
+    </div>
+
+    <div class="options-card">
+        <form id="trackForm">
+            <div class="option-group">
+                <label for="tokenInput">Token Number</label>
+                <input type="text" id="tokenInput"
+                       placeholder="Example: WP024" required>
+            </div>
+            <button type="submit" class="upload-continue">Track Order ↗</button>
+        </form>
+
+        <div id="trackingResult" class="tracking-result" hidden>
+            <h3>Order Details</h3>
+            <div class="summary-row">
+                <span>Token Number</span>
+                <strong id="shownToken"></strong>
+            </div>
+            <div class="summary-row">
+                <span>Shop</span>
+                <strong>Campus Print Hub</strong>
+            </div>
+            <div class="summary-row">
+                <span>Status</span>
+                <strong class="tracking-status">Pending</strong>
+            </div>
+            <div class="summary-row">
+                <span>Estimated Waiting Time</span>
+                <strong>15–20 minutes</strong>
+            </div>
+            <p class="token-note">
+                This is sample tracking information. Live updates will be
+                available after backend integration.
+            </p>
+        </div>
+    </div>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

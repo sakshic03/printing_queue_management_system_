@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Document | WaitLess Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="upload-page">
+
+    <header class="shops-navbar">
+        <a href="/" class="logo">
+            <span class="logo-icon">W</span>
+            WaitLess<span class="logo-green">Print.</span>
+        </a>
+        <a href="/shops" class="back-home">← Back to shops</a>
+    </header>
+
+    <main class="upload-container">
+
+        <div class="upload-heading">
+            <span class="section-tag">STEP 02 — UPLOAD DOCUMENT</span>
+            <h1>Your documents,<br><span>ready to print.</span></h1>
+            <p>Upload your file and get one step closer to hassle-free printing.</p>
+        </div>
+
+        <section class="upload-card">
+
+            <div class="upload-icon">↑</div>
+            <h2>Upload your document</h2>
+            <p>Choose a file from your device</p>
+
+            <label for="documentFile" class="upload-dropzone">
+                <span class="upload-file-icon">📄</span>
+                <strong>Click to browse files</strong>
+                <span>PDF, DOC or DOCX</span>
+                <small>Maximum file size: 10 MB</small>
+            </label>
+
+            <input type="file" id="documentFile"
+                   accept=".pdf,.doc,.docx"
+                   hidden>
+
+            <div id="fileInfo" class="file-info">
+                No file selected yet
+            </div>
+
+            <button type="button" id="continueUpload"
+                    class="upload-continue" disabled>
+                Continue to print options ↗
+            </button>
+
+            <p id="uploadMessage" class="upload-message"></p>
+
+        </section>
+
+        <div class="upload-note">
+            <span>ⓘ</span>
+            Your document will be processed after backend integration.
+            This page is currently a frontend preview.
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

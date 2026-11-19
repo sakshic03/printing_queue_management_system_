@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a Print Shop | WaitLess Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="shops-page">
+
+    <header class="shops-navbar">
+        <a href="/" class="logo">
+            <span class="logo-icon">W</span>
+            WaitLess<span class="logo-green">Print.</span>
+        </a>
+        <a href="/" class="back-home">← Back to home</a>
+    </header>
+
+    <main class="shops-container">
+
+        <div class="shops-heading">
+            <span class="section-tag">STEP 01 — CHOOSE YOUR SHOP</span>
+            <h1>Find your <span>print partner.</span></h1>
+            <p>Select a printing shop that works best for you. Upload your document in the next step.</p>
+        </div>
+
+        <div class="shops-toolbar">
+            <div>
+                <h3>Available print shops</h3>
+                <p>Sample shops for frontend preview</p>
+            </div>
+            <span class="demo-label">DEMO DATA</span>
+        </div>
+
+        <div class="shops-grid">
+
+            <article class="shop-card">
+                <div class="shop-top">
+                    <div class="shop-icon">✦</div>
+                    <span class="shop-status">● Available</span>
+                </div>
+                <h2>Campus Print Hub</h2>
+                <p class="shop-location">⌖ Near College Campus</p>
+                <div class="shop-details">
+                    <span>Black & White</span>
+                    <span>Colour Print</span>
+                </div>
+                <div class="shop-footer">
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹2 <small>/ page</small></strong>
+                    </div>
+                    <button class="select-shop-btn" data-shop="Campus Print Hub">
+                        Select Shop ↗
+                    </button>
+                </div>
+            </article>
+
+            <article class="shop-card">
+                <div class="shop-top">
+                    <div class="shop-icon">✧</div>
+                    <span class="shop-status">● Available</span>
+                </div>
+                <h2>Quick Copy Centre</h2>
+                <p class="shop-location">⌖ Main Road</p>
+                <div class="shop-details">
+                    <span>Black & White</span>
+                    <span>Colour Print</span>
+                </div>
+                <div class="shop-footer">
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹3 <small>/ page</small></strong>
+                    </div>
+                    <button class="select-shop-btn" data-shop="Quick Copy Centre">
+                        Select Shop ↗
+                    </button>
+                </div>
+            </article>
+
+            <article class="shop-card">
+                <div class="shop-top">
+                    <div class="shop-icon">✦</div>
+                    <span class="shop-status">● Available</span>
+                </div>
+                <h2>Smart Prints</h2>
+                <p class="shop-location">⌖ Near Library</p>
+                <div class="shop-details">
+                    <span>Black & White</span>
+                    <span>Colour Print</span>
+                </div>
+                <div class="shop-footer">
+                    <div>
+                        <small>Starting from</small>
+                        <strong>₹2.50 <small>/ page</small></strong>
+                    </div>
+                    <button class="select-shop-btn" data-shop="Smart Prints">
+                        Select Shop ↗
+                    </button>
+                </div>
+            </article>
+
+        </div>
+
+        <p id="shopMessage" class="shop-message"></p>
+
+        <div class="shops-note">
+            <span>ⓘ</span>
+            Shop names, availability and prices shown here are sample data for the frontend preview.
+        </div>
+
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

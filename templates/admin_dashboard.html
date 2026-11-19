@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Admin | WaitLess Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="print-options-page">
+
+<header class="shops-navbar">
+    <a href="/" class="logo">
+        <span class="logo-icon">W</span>
+        WaitLess<span class="logo-green">Print.</span>
+    </a>
+    <a href="/" class="back-home">Logout</a>
+</header>
+
+<main class="options-container" style="max-width: 1000px;">
+    <div class="upload-heading">
+        <span class="section-tag">SHOP MANAGEMENT</span>
+        <h1>Admin <span>Dashboard.</span></h1>
+        <p>Manage incoming print orders and update their status.</p>
+    </div>
+
+    <div class="admin-stats">
+        <div class="admin-stat">
+            <span>Total Orders</span>
+            <strong>12</strong>
+        </div>
+        <div class="admin-stat">
+            <span>Pending</span>
+            <strong>05</strong>
+        </div>
+        <div class="admin-stat">
+            <span>Processing</span>
+            <strong>04</strong>
+        </div>
+        <div class="admin-stat">
+            <span>Ready</span>
+            <strong>03</strong>
+        </div>
+    </div>
+
+    <div class="options-card admin-orders">
+        <h3>Recent Orders</h3>
+
+        <div class="admin-order">
+            <div>
+                <strong>WP024</strong>
+                <p>Rahul Patil · 2 Copies · B&W</p>
+            </div>
+            <select class="order-status">
+                <option>Pending</option>
+                <option>Processing</option>
+                <option>Ready</option>
+                <option>Completed</option>
+            </select>
+        </div>
+
+        <div class="admin-order">
+            <div>
+                <strong>WP025</strong>
+                <p>Priya Sharma · 1 Copy · Colour</p>
+            </div>
+            <select class="order-status">
+                <option>Pending</option>
+                <option selected>Processing</option>
+                <option>Ready</option>
+                <option>Completed</option>
+            </select>
+        </div>
+
+        <div class="admin-order">
+            <div>
+                <strong>WP026</strong>
+                <p>Amit Jadhav · 3 Copies · B&W</p>
+            </div>
+            <select class="order-status">
+                <option>Pending</option>
+                <option>Processing</option>
+                <option selected>Ready</option>
+                <option>Completed</option>
+            </select>
+        </div>
+
+        <p id="adminMessage" class="upload-message">
+            Sample orders shown for frontend demonstration.
+        </p>
+    </div>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

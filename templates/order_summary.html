@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary | WaitLess Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="print-options-page">
+
+<header class="shops-navbar">
+    <a href="/" class="logo">
+        <span class="logo-icon">W</span>
+        WaitLess<span class="logo-green">Print.</span>
+    </a>
+    <a href="/print-options" class="back-home">← Back to print options</a>
+</header>
+
+<main class="options-container">
+
+    <div class="upload-heading">
+        <span class="section-tag">STEP 04 — ORDER SUMMARY</span>
+        <h1>Review your <span>order.</span></h1>
+        <p>Check your printing details before confirming.</p>
+    </div>
+
+    <div class="options-card">
+
+        <h3>Order Details</h3>
+
+        <div class="summary-row">
+            <span>Printing Shop</span>
+            <strong>Campus Print Hub</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Document</span>
+            <strong>Sample Document.pdf</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Print Type</span>
+            <strong>Black & White</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Paper Size</span>
+            <strong>A4</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Copies</span>
+            <strong>1</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Print Sides</span>
+            <strong>Single Side</strong>
+        </div>
+
+        <div class="price-preview">
+            <span>Estimated Total</span>
+            <strong>₹2.00</strong>
+            <small>Demo amount. Final price will depend on actual pages and shop rates.</small>
+        </div>
+
+        <button class="upload-continue" onclick="alert('Order confirmation will work after backend integration.')">
+            Confirm Order ↗
+        </button>
+
+    </div>
+</main>
+
+</body>
+</html>

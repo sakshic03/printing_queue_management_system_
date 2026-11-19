@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Options | WaitLess Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="print-options-page">
+
+<header class="shops-navbar">
+    <a href="/" class="logo">
+        <span class="logo-icon">W</span>
+        WaitLess<span class="logo-green">Print.</span>
+    </a>
+    <a href="/upload" class="back-home">← Back to upload</a>
+</header>
+
+<main class="options-container">
+
+    <div class="upload-heading">
+        <span class="section-tag">STEP 03 — PRINT SETTINGS</span>
+        <h1>Make it <span>your way.</span></h1>
+        <p>Choose your printing preferences before placing your order.</p>
+    </div>
+
+    <form id="printOptionsForm" class="options-card">
+
+        <div class="option-group">
+            <label>Print type</label>
+            <div class="option-choices">
+                <label class="choice-card">
+                    <input type="radio" name="printType" value="Black & White" checked>
+                    <span>◐</span>
+                    <strong>Black & White</strong>
+                    <small>₹2 / page (demo)</small>
+                </label>
+                <label class="choice-card">
+                    <input type="radio" name="printType" value="Colour">
+                    <span>◉</span>
+                    <strong>Colour</strong>
+                    <small>₹5 / page (demo)</small>
+                </label>
+            </div>
+        </div>
+
+        <div class="option-group">
+            <label for="copies">Number of copies</label>
+            <input type="number" id="copies" min="1" max="100" value="1" required>
+        </div>
+
+        <div class="option-group">
+            <label for="paperSize">Paper size</label>
+            <select id="paperSize">
+                <option value="A4">A4</option>
+                <option value="A3">A3</option>
+                <option value="A5">A5</option>
+            </select>
+        </div>
+
+        <div class="option-group">
+            <label>Page selection</label>
+            <div class="option-choices">
+                <label class="choice-card">
+                    <input type="radio" name="pageRange" value="All Pages" checked>
+                    <strong>All Pages</strong>
+                </label>
+                <label class="choice-card">
+                    <input type="radio" name="pageRange" value="Custom Pages">
+                    <strong>Custom Pages</strong>
+                </label>
+            </div>
+            <input type="text" id="customPages"
+                   placeholder="Example: 1-5, 8, 10"
+                   style="display:none; margin-top:12px;">
+        </div>
+
+        <div class="option-group">
+            <label>Print sides</label>
+            <div class="option-choices">
+                <label class="choice-card">
+                    <input type="radio" name="sides" value="Single Side" checked>
+                    <strong>Single Side</strong>
+                </label>
+                <label class="choice-card">
+                    <input type="radio" name="sides" value="Double Side">
+                    <strong>Double Side</strong>
+                </label>
+            </div>
+        </div>
+
+        <div class="price-preview">
+            <span>Estimated price</span>
+            <strong id="estimatedPrice">₹2</strong>
+            <small>Demo estimate for one page. Final price depends on actual document pages and shop rates.</small>
+        </div>
+
+        <button type="submit" class="upload-continue">
+            Continue to order summary ↗
+        </button>
+
+        <p id="optionsMessage" class="upload-message"></p>
+
+    </form>
+</main>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

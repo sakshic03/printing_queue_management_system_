@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Token | WaitLess Print</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="print-options-page">
+
+<header class="shops-navbar">
+    <a href="/" class="logo">
+        <span class="logo-icon">W</span>
+        WaitLess<span class="logo-green">Print.</span>
+    </a>
+</header>
+
+<main class="options-container">
+    <div class="upload-heading">
+        <span class="section-tag">STEP 05 — ORDER CONFIRMED</span>
+        <h1>Your print is <span>in queue!</span></h1>
+        <p>Your demo order has been placed successfully.</p>
+    </div>
+
+    <div class="options-card token-card">
+        <p class="token-label">YOUR TOKEN NUMBER</p>
+        <h1 class="token-number">WP024</h1>
+
+        <div class="token-status">
+            <span class="status-dot"></span>
+            Order Pending
+        </div>
+
+        <div class="summary-row">
+            <span>Printing Shop</span>
+            <strong>Campus Print Hub</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Estimated Waiting Time</span>
+            <strong>15–20 minutes</strong>
+        </div>
+
+        <div class="summary-row">
+            <span>Estimated Amount</span>
+            <strong>₹2.00</strong>
+        </div>
+
+        <p class="token-note">
+            Please keep your token number safe and show it at the printing shop.
+        </p>
+
+        <a href="/" class="upload-continue token-home">
+            Back to Home ↗
+        </a>
+    </div>
+</main>
+
+</body>
+</html>
