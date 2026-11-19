@@ -1,16 +1,42 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>WaitLess Print</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        .admin-login-btn {
+            display: inline-block;
+            background: #7c3aed;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        .admin-login-btn:hover {
+            background: #5b21b6;
+        }
+    </style>
 </head>
+
 <body>
 
+    <!-- HEADER -->
     <header>
-        <div class="logo">WaitLess <span>Print</span></div>
+
+        <div class="logo">
+            WaitLess <span>Print</span>
+        </div>
 
         <nav>
             <a href="#home">Home</a>
@@ -19,14 +45,30 @@
             <a href="#contact">Contact</a>
         </nav>
 
-        <a href="#" class="login-btn">Login</a>
+        <!-- STUDENT LOGIN BUTTON -->
+        <a href="{{ url_for('login') }}" class="login-btn">
+            Student Login
+        </a>
+
+        <!-- ADMIN LOGIN BUTTON -->
+        <a href="{{ url_for('admin_login') }}" class="admin-login-btn">
+            Admin Login
+        </a>
+
     </header>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="tagline">SMART PRINTING • ZERO WAITING</p>
 
-            <h1>Print Smart.<br>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="tagline">
+                SMART PRINTING • ZERO WAITING
+            </p>
+
+            <h1>
+                Print Smart.<br>
                 <span>Wait Less.</span>
             </h1>
 
@@ -36,20 +78,50 @@
                 No more long queues!
             </p>
 
-            <a href="#" class="main-btn">Get Started →</a>
+            <!-- GET STARTED BUTTON -->
+            <a href="{{ url_for('register') }}" class="main-btn">
+                Get Started →
+            </a>
+
         </div>
+
 
         <div class="hero-card">
+
             <div class="printer">🖨️</div>
+
             <h2>Your Printing, Simplified!</h2>
-            <p>Upload • Select • Track • Collect</p>
+
+            <p>
+                Upload • Select • Track • Collect
+            </p>
+
         </div>
+
     </section>
 
+
+    <!-- ABOUT SECTION -->
+    <section class="features" id="about">
+
+        <h2>About WaitLess Print</h2>
+
+        <p>
+            WaitLess Print is an online printing and queue
+            management platform that makes printing simple,
+            fast and convenient for students.
+        </p>
+
+    </section>
+
+
+    <!-- FEATURES SECTION -->
     <section class="features" id="features">
+
         <h2>Why Choose WaitLess Print?</h2>
 
         <div class="feature-container">
+
             <div class="feature-box">
                 <h3>📄 Easy Upload</h3>
                 <p>Upload your documents online.</p>
@@ -69,13 +141,26 @@
                 <h3>📍 Track Order</h3>
                 <p>Check your printing order status.</p>
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- CONTACT SECTION -->
     <footer id="contact">
-        <p>© 2026 WaitLess Print | Online Printing & Queue Management</p>
+
+        <p>
+            © 2026 WaitLess Print |
+            Online Printing & Queue Management
+        </p>
+
     </footer>
 
+
+    <!-- JAVASCRIPT -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+
 </body>
+
 </html>

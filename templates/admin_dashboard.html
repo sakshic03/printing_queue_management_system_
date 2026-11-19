@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - WaitLess Print</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            padding: 20px;
+        }
+
+        h1 {
+            background: #2563eb;
+            color: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #1d4ed8;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 1100px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f1f5f9;
+        }
+
+        select {
+            padding: 9px;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            background: #16a34a;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background: #15803d;
+        }
+
+        .logout {
+            display: inline-block;
+            background: #dc2626;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .logout:hover {
+            background: #991b1b;
+        }
+
+        .message {
+            color: green;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .empty {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>WaitLess Print - Admin Dashboard</h1>
+
+    <h2>All Print Requests</h2>
+
+    <!-- FLASH MESSAGES -->
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p class="message">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+
+    {% if requests_data %}
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Student Name</th>
+                    <th>Student Email</th>
+                    <th>Document</th>
+                    <th>Copies</th>
+                    <th>Print Type</th>
+                    <th>Paper Size</th>
+                    <th>Current Status</th>
+                    <th>Update Status</th>
+                    <th>Request Date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for item in requests_data %}
+
+                <tr>
+
+                    <td>{{ item.id }}</td>
+
+                    <td>{{ item.name or 'N/A' }}</td>
+
+                    <td>{{ item.student_email }}</td>
+
+                    <td>{{ item.filename or 'Deleted' }}</td>
+
+                    <td>{{ item.copies }}</td>
+
+                    <td>{{ item.print_type }}</td>
+
+                    <td>{{ item.paper_size }}</td>
+
+                    <td>
+                        <strong>{{ item.status }}</strong>
+                    </td>
+
+                    <td>
+
+                        <form method="POST"
+                        action="{{ url_for('update_print_status', request_id=item.id) }}">
+
+                            <select name="status" required>
+
+                                <option value="Pending"
+                                {% if item.status == 'Pending' %}selected{% endif %}>
+                                    Pending
+                                </option>
+
+                                <option value="Accepted"
+                                {% if item.status == 'Accepted' %}selected{% endif %}>
+                                    Accepted
+                                </option>
+
+                                <option value="Rejected"
+                                {% if item.status == 'Rejected' %}selected{% endif %}>
+                                    Rejected
+                                </option>
+
+                                <option value="Completed"
+                                {% if item.status == 'Completed' %}selected{% endif %}>
+                                    Completed
+                                </option>
+
+                            </select>
+
+                            <br>
+
+                            <button type="submit">
+                                Update
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                    <td>{{ item.request_date }}</td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    {% else %}
+
+        <p class="empty">No print requests available.</p>
+
+    {% endif %}
+
+    <a href="{{ url_for('admin_logout') }}" class="logout">
+        Logout
+    </a>
+
+</body>
+
+</html>
